@@ -1,11 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Klusser.Models
 {
-    public class User
+    internal class User
     {
+        #region fields
+        private string _password;
+
+        #endregion
+
+        #region properties
+        public string Name { get; set; }
+        private int Score { get; set; } = 0;
+        public string Password { get; private set; }
+        public string Color { get; set; }
+
+        //niet zeker
+        public List<Chore> ChoreHistoryList { get; }
+        #endregion
+
+        #region constructors
+        public User(string name)
+        {
+            this.Name = name;
+            ChoreHistoryList = new List<Chore>();
+
+            Password = createPassword();
+        }
+
+        #endregion
+
+        #region methods
+        //klopt niet
+        private string createPassword()
+        {
+            string psswd = "";
+
+            return psswd;
+
+        }
+        
+
+        #endregion
     }
 }
