@@ -10,10 +10,12 @@ namespace Klusser.Models
         #endregion
 
         #region properties
-        public string Name { get; set; }
         private int Score { get; set; } = 0;
+
+        public string Name { get; set; }
         public string Password { get; private set; }
         public string Color { get; set; }
+
 
         //niet zeker
         public List<Chore> ChoreHistoryList { get; }
@@ -22,7 +24,8 @@ namespace Klusser.Models
         #region constructors
         public User(string name)
         {
-            this.Name = name;
+            Name = name;
+
             ChoreHistoryList = new List<Chore>();
 
             Password = createPassword();

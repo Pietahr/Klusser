@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Klusser.Models
 {
     internal class Household
     {
         #region fields
-        private List<Chore> _choreList;
-        private List<User> _userList;
-        #endregion
 
+        #endregion
 
         #region properties
 
+        public List<Chore> ChoreList { get; }
+        public List<User> UserList { get; }
         public string Name { get; set; }
 
         #endregion
@@ -23,8 +20,8 @@ namespace Klusser.Models
 
         public Household(List<Chore> choreList, List<User> userList)
         {
-            _choreList = choreList;
-            _userList = userList;
+            ChoreList = choreList;
+            UserList = userList;
         }
 
         #endregion

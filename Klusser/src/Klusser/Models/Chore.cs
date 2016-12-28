@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection.Metadata;
 
 namespace Klusser.Models
 {
@@ -13,7 +12,7 @@ namespace Klusser.Models
         //field wordt automatisch aangemaakt
         #region properties
         public string Name { get; set; }
-        public DateTime date { get;} = DateTime.Now;
+        public DateTime Date { get;} = DateTime.Now;
         //negatieve&positieve bonus van 10%?
 
         #endregion
@@ -21,8 +20,8 @@ namespace Klusser.Models
         #region constructors
         public Chore(string name, int points)
         {
-            this.Name = name;
-            this._points = points;
+            Name = name;
+            _points = points;
         }
 
         #endregion
