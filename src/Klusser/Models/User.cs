@@ -2,7 +2,7 @@
 
 namespace Klusser.Models
 {
-    internal class User
+    public class User
     {
         #region fields
         private string _password;

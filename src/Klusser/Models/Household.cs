@@ -10,18 +10,18 @@ namespace Klusser.Models
 
         #region properties
 
-        public List<Chore> ChoreList { get; }
-        public List<User> UserList { get; }
+        public ICollection<Chore> ChoreList { get; }
+        public IEnumerable<User> UserList { get; }
         public string Name { get; set; }
 
         #endregion
 
         #region constructors
 
-        public Household(List<Chore> choreList, List<User> userList)
+        public Household()
         {
-            ChoreList = choreList;
-            UserList = userList;
+            ChoreList = new List<Chore>();
+            UserList = new List<User>() { new User("Mathieu"),new User("Corten"), new User("Pieter")};
         }
 
         #endregion
