@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Klusser.Models
 {
-    internal class Household
+    public class Household
     {
         #region fields
 
@@ -28,6 +29,20 @@ namespace Klusser.Models
 
         #region methods
 
+        public ICollection<Chore> GetChores(DateTime? from, DateTime? till)
+        {
+            if (from == null && till == null) return ChoreList;
+            if (from == null) from = DateTime.MinValue;
+            if(!till.HasValue) till = DateTime.MaxValue;
+
+            ICollection<Chore> choreList = new List<Chore>();
+            foreach (Chore c in ChoreList)
+            {
+                if (c.DateOfChore >= from && c.DateOfChore <= till)
+                    choreList.Add(c);
+            }
+            return choreList;
+        }
         
 
         #endregion

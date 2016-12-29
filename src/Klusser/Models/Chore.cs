@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace Klusser.Models
 {
     public class Chore
     {
         #region field
-        private readonly int _points;
 
         #endregion
 
         //field wordt automatisch aangemaakt
         #region properties
         public string Name { get; set; }
-        public DateTime Date { get; private set; }
+        public int Points { get; }
+        public DateTime DateOfChore { get; private set; }
         //negatieve&positieve bonus van 10%?
-        private IEnumerable<string> _lijst = new List<string>();
-        private ICollection<string> _lijst2 = new List<string>();
 
         #endregion
 
@@ -25,8 +21,8 @@ namespace Klusser.Models
         public Chore(string name, int points)
         {
             Name = name;
-            _points = points;
-            Date = DateTime.Now;
+            Points = points;
+            DateOfChore = DateTime.Now;
 
         }
 

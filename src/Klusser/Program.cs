@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
+using Klusser.Models;
 
 namespace Klusser
 {
@@ -11,14 +7,10 @@ namespace Klusser
     {
         public static void Main(string[] args)
         {
-            var host = new WebHostBuilder()
-                .UseKestrel()
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
-                .UseStartup<Startup>()
-                .Build();
+            Chore chore = new Chore("Dweilen",100);
 
-            host.Run();
+            Console.WriteLine(chore.DateOfChore);
+            Console.ReadLine();
         }
     }
 }

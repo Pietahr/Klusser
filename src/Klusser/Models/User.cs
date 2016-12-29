@@ -10,7 +10,7 @@ namespace Klusser.Models
         #endregion
 
         #region properties
-        private int Score { get; set; } = 0;
+        private int Score { get; set; }
 
         public string Name { get; set; }
         public string Password { get; private set; }
@@ -22,9 +22,11 @@ namespace Klusser.Models
         #endregion
 
         #region constructors
-        public User(string name)
+        public User(string name, string password, int score)
         {
             Name = name;
+            _password = password;
+            Score = score;
 
             ChoreHistoryList = new List<Chore>();
 
